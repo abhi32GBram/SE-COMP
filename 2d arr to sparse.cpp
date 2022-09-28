@@ -4,6 +4,7 @@ int main(){
     int a[50][50];
     int s[50][50];
     int i,j,r,c,m;
+    int na[50][50];
     int sr=1;
     int count=0;
     cout<<"IF THE MATRIX IS OF TYPE MxM PLEASE ENTER M"<<endl;
@@ -48,5 +49,30 @@ int main(){
         }
         cout<<endl;
     }
+     cout << "          " << endl;
+    cout << endl;
+    cout << "CONVERTING ABOVE SPARSE MATRIX TO 2D MATRIX" << endl;
+    cout << endl;
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < m; j++) {
+            a[i][j] = 0;
+        }
+    }
+    int n = s[0][2];
+    for (int k = 1; k <= n; k++) {
+        i = s[k][0];
+        j = s[k][1];
+        a[i][j] = s[k][2];
+
+    }
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < m; j++) {
+            cout <<"\t" << 
+                a[i][j];
+        }
+        cout<<endl;
+    }
+    return 0;
+   
 
 }
